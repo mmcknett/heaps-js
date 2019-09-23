@@ -25,6 +25,31 @@ describe('Heap', function() {
     expect(addSomethingToHeap).not.to.throw();
   });
 
+  it('adds one node properly', function() {
+    // Arrange
+    heap.add(3, 'Pasta');
+
+    // Act
+    const output = heap.toString();
+
+    // Assert
+
+    expect(output).to.equal('[Pasta]');
+  });
+
+  it('adds two node properly', function() {
+    // Arrange
+    heap.add(3, 'Pasta');
+    heap.add(1, 'Pizza');
+
+    // Act
+    const output = heap.toString();
+
+    // Assert
+
+    expect(output).to.equal('[Pizza, Pasta]');
+  });
+
   it('adds nodes in a proper order', function() {
     // Arrange
     heap.add(3, 'Pasta');
