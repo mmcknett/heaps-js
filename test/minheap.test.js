@@ -1,4 +1,5 @@
 const { expect } = require('chai').expect;
+const { MinHeap } = require('../lib/minheap');
 
 describe('Heap', function() {
   beforeEach(function() {
