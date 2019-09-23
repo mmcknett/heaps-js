@@ -81,7 +81,7 @@ describe('Heap', function() {
     expect(output).to.equal('[Donuts, Pizza, Pasta, Soup, Cookies, Cake]');
   });
 
-  it('can remove nodes in the proper order', function() {
+  it('can remove one node in the proper order', function() {
     // Arrange
     heap.add(3, 'Pasta');
     heap.add(6, 'Soup');
@@ -91,11 +91,44 @@ describe('Heap', function() {
     heap.add(57, 'Cake');
 
     // Act
-    const removed = [heap.remove(), heap.remove(), heap.remove()];
+    const removed = heap.remove();
 
     // Assert
-    expect(removed[0]).to.equal('Donuts');
-    expect(removed[1]).to.equal('Pizza');
-    expect(removed[2]).to.equal('Pasta');
+    expect(removed).to.equal('Donuts');
+  });
+
+  it('can remove two nodes in the proper order', function() {
+    // Arrange
+    heap.add(3, 'Pasta');
+    heap.add(6, 'Soup');
+    heap.add(1, 'Pizza');
+    heap.add(0, 'Donuts');
+    heap.add(16, 'Cookies');
+    heap.add(57, 'Cake');
+
+    // Act
+    heap.remove();
+    const removed = heap.remove();
+
+    // Assert
+    expect(removed).to.equal('Pizza');
+  });
+
+  it('can remove three nodes in the proper order', function() {
+    // Arrange
+    heap.add(3, 'Pasta');
+    heap.add(6, 'Soup');
+    heap.add(1, 'Pizza');
+    heap.add(0, 'Donuts');
+    heap.add(16, 'Cookies');
+    heap.add(57, 'Cake');
+
+    // Act
+    heap.remove();
+    heap.remove();
+    const removed = heap.remove();
+
+    // Assert
+    expect(removed).to.equal('Pasta');
   });
 });
