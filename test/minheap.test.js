@@ -91,10 +91,12 @@ describe('Heap', function() {
     heap.add(57, 'Cake');
 
     // Act
+    expect(heap.toString()).to.equal('[Donuts, Pizza, Pasta, Soup, Cookies, Cake]');
     const removed = heap.remove();
 
     // Assert
     expect(removed).to.equal('Donuts');
+    expect(heap.toString()).to.equal('[Pizza, Soup, Pasta, Cake, Cookies]');
   });
 
   it('can remove two nodes in the proper order', function() {
@@ -112,6 +114,7 @@ describe('Heap', function() {
 
     // Assert
     expect(removed).to.equal('Pizza');
+    expect(heap.toString()).to.equal('[Pasta, Soup, Cookies, Cake]');
   });
 
   it('can remove three nodes in the proper order', function() {
