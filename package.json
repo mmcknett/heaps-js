@@ -1,0 +1,23 @@
+{
+  "name": "heaps",
+  "version": "1.0.0",
+  "description": "Heaps practice based on https://github.com/Ada-C11/heaps",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmcknett/heaps-js.git"
+  },
+  "author": "mmcknett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmcknett/heaps-js/issues"
+  },
+  "homepage": "https://github.com/mmcknett/heaps-js#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
