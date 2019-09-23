@@ -1,9 +1,11 @@
-const { expect } = require('chai').expect;
+const expect = require('chai').expect;
 const { MinHeap } = require('../lib/minheap');
 
 describe('Heap', function() {
+  let heap;
+
   beforeEach(function() {
-    const heap = new MinHeap();
+    heap = new MinHeap();
   });
 
   it('can be created', function() {
@@ -15,6 +17,7 @@ describe('Heap', function() {
   it('can have nodes added', function() {
     // Assert
     expect(heap.add).not.to.be.undefined;
+    expect(heap.add(10, 'someValue')).not.to.throw();
   });
 
   it('adds nodes in a proper order', function() {

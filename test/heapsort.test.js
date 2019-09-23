@@ -1,4 +1,4 @@
-const { expect } = require('chai').expect;
+const expect = require('chai').expect;
 
 describe.skip("heapsort", function() {
   it("sorts an empty array", function() {
