@@ -142,4 +142,37 @@ describe('Heap', function() {
     // Assert
     expect(removed).to.be.undefined;
   });
+
+  it('handles inserting 8 things in reverse order', function() {
+    // Arrange/Act
+    heap.add(8, 'A');
+    heap.add(7, 'B');
+    heap.add(6, 'C');
+    heap.add(5, 'D');
+    heap.add(4, 'E');
+    heap.add(3, 'F');
+    heap.add(2, 'G');
+    heap.add(1, 'H');
+
+    // Assert
+    expect(heap.toString()).to.equal('[H, G, F, D, C, B, E, A]');
+  });
+
+  it('removes 8 things in reverse order in the right order', function() {
+    // Arrange
+    heap.add(8, 'A');
+    heap.add(7, 'B');
+    heap.add(6, 'C');
+    heap.add(5, 'D');
+    heap.add(4, 'E');
+    heap.add(3, 'F');
+    heap.add(2, 'G');
+    heap.add(1, 'H');
+
+    // Act
+    const removed = Array(8).fill(null).map(() => heap.remove());
+
+    // Assert
+    expect(removed).to.eql(['H', 'G', 'F', 'E', 'D', 'C', 'B', 'A']);
+  });
 });
