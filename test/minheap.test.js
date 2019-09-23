@@ -131,4 +131,12 @@ describe('Heap', function() {
     // Assert
     expect(removed).to.equal('Pasta');
   });
+
+  it('does nothing when removing from an empty heap', function() {
+    // Act
+    const removed = heap.remove();
+
+    // Assert
+    expect(removed).to.be.undefined;
+  });
 });
