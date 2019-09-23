@@ -15,9 +15,14 @@ describe('Heap', function() {
   });
 
   it('can have nodes added', function() {
+    // Arrange/Act
+    const addSomethingToHeap = function () {
+      heap.add(10, 'someValue');
+    }
+
     // Assert
     expect(heap.add).not.to.be.undefined;
-    expect(heap.add(10, 'someValue')).not.to.throw();
+    expect(addSomethingToHeap).not.to.throw();
   });
 
   it('adds nodes in a proper order', function() {
